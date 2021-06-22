@@ -13,7 +13,7 @@ const Cart = ({ cart, onUpdateCartQty, onRemoveFromCart, onEmptyCart }) => {
     //Link
     const EmptyCart = () => (
         <Typography variant="subtitle1">目前無添加房型
-            <Link to="/" className={classes.link} >開始選擇適合您的房型</Link>!
+            <Link to="/products" className={classes.link} >開始選擇適合您的房型</Link>!
         </Typography>
     );
 
