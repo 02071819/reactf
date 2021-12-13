@@ -64,23 +64,23 @@ const [user,setUser]=useState(null)
     fetchCart();
   }, []); //hook, run at th start on the render
   
-  useEffect(()=>{
-    const unsubscribe = auth.onAuthStateChanged(
-      userAuth=>{
-        const user={
-          uid:userAuth?.uid,
-          email:userAuth?.email
-        }
-        if(userAuth){
-          console.log(userAuth)
-          setUser(user)
-        } else{
-          setUser(null)
-        }
-      })
-      return unsubscribe
+//   useEffect(()=>{
+//     const unsubscribe = auth.onAuthStateChanged(
+//       userAuth=>{
+//         const user={
+//           uid:userAuth?.uid,
+//           email:userAuth?.email
+//         }
+//         if(userAuth){
+//           console.log(userAuth)
+//           setUser(user)
+//         } else{
+//           setUser(null)
+//         }
+//       })
+//       return unsubscribe
       
-  },[])
+//   },[])
 
 
   //對應Products.jsx、Cart.jsx、CartItem.jsx、Checkout.jsx那邊的props
@@ -98,7 +98,7 @@ const [user,setUser]=useState(null)
         <Switch>
           
           <Route exact path='/'>
-          {user?<Home/>:<Signin/>}
+          {user?<Home/>}
           </Route> 
 
           <Route exact path="/products">
