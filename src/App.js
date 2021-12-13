@@ -5,8 +5,8 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Home from './components/Pages/Home';
 
-import Signin from './components/Signin';
-import { auth } from './firebase';
+// import Signin from './components/Signin';
+// import { auth } from './firebase';
 import { Input } from '@material-ui/core';
 import { cleanup } from '@testing-library/react';
 // import CHome from './components/CHome'
@@ -92,14 +92,11 @@ const [user,setUser]=useState(null)
       <Router>
       
         <Navbar totalItems={cart.total_items} />
-
-        
-
         <Switch>
           
           <Route exact path='/'>
-          {user?<Home/>}
-          </Route> 
+            <Home />
+          </Route>
 
           <Route exact path="/products">
             <Products products={products} onAddToCart={handleAddToCart} />
